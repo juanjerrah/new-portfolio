@@ -119,10 +119,10 @@ function debounce(fn, delay) {
 
   const roles = [
     'Full Stack',
-    'Front-end',
-    'Back-end',
-    'React',
-    'Node.js',
+    'Backend',
+    'C# .NET',
+    'Golang',
+    'Microservices',
   ];
 
   let roleIndex   = 0;
@@ -173,6 +173,8 @@ function debounce(fn, delay) {
   const targets = [
     '.about__grid',
     '.stat-card',
+    '.timeline__card',
+    '.timeline__dot',
     '.project-card',
     '.contact__form-wrapper',
     '.contact__info',
@@ -186,7 +188,12 @@ function debounce(fn, delay) {
   targets.forEach(selector => {
     $$(selector).forEach((el, i) => {
       el.classList.add('reveal');
-      el.style.transitionDelay = `${i * 60}ms`;
+      // Stagger timeline cards with longer delay between items
+      if (selector === '.timeline__card') {
+        el.style.transitionDelay = `${i * 120}ms`;
+      } else {
+        el.style.transitionDelay = `${i * 60}ms`;
+      }
     });
   });
 
@@ -436,6 +443,30 @@ function showToast(message, duration = 4000) {
     // Update URL hash without triggering scroll
     history.pushState(null, '', anchor.getAttribute('href'));
   });
+})();
+
+// ──────────────────────────────────────
+// TIMELINE — activate dots on scroll reveal
+// ──────────────────────────────────────
+
+(function initTimeline() {
+  const items = $$('.timeline__item');
+  if (!items.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const dot = entry.target.querySelector('.timeline__dot');
+        if (dot && !dot.classList.contains('timeline__dot--current')) {
+          dot.style.borderColor = 'var(--color-accent)';
+          dot.style.background  = 'var(--color-accent-glow)';
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.35 });
+
+  items.forEach(item => observer.observe(item));
 })();
 
 // ──────────────────────────────────────
