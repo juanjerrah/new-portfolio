@@ -14,9 +14,11 @@
     },
     "formErrors": {
       "nameRequired": "O nome é obrigatório.",
-      "nameMin": "O nome deve ter ao menos 2 caracteres.",
+      "nameMin": "O nome deve ter ao menos 3 caracteres.",
       "emailRequired": "O e-mail é obrigatório.",
       "emailInvalid": "Informe um e-mail válido.",
+      "subjectRequired": "O assunto é obrigatório.",
+      "subjectMin": "O assunto deve ter ao menos 3 caracteres.",
       "messageRequired": "A mensagem é obrigatória.",
       "messageMin": "A mensagem deve ter ao menos 10 caracteres.",
       "sendError": "Erro ao enviar mensagem. Tente novamente."

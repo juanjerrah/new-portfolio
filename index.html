@@ -236,7 +236,9 @@
               </div>
 
               <div class="form-group">
-                <label for="subject" class="form-label">Assunto</label>
+                <label for="subject" class="form-label">
+                  Assunto <span class="required" aria-label="campo obrigatório">*</span>
+                </label>
                 <input
                   type="text"
                   id="subject"
@@ -244,7 +246,11 @@
                   class="form-input"
                   placeholder=""
                   autocomplete="off"
+                  required
+                  aria-required="true"
+                  aria-describedby="subject-error"
                 />
+                <span class="form-error" id="subject-error" role="alert" aria-live="polite"></span>
               </div>
 
               <div class="form-group">

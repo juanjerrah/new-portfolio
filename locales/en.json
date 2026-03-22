@@ -14,9 +14,11 @@
     },
     "formErrors": {
       "nameRequired": "Name is required.",
-      "nameMin": "Name must be at least 2 characters.",
+      "nameMin": "Name must be at least 3 characters.",
       "emailRequired": "Email is required.",
       "emailInvalid": "Please enter a valid email.",
+      "subjectRequired": "Subject is required.",
+      "subjectMin": "Subject must be at least 3 characters.",
       "messageRequired": "Message is required.",
       "messageMin": "Message must be at least 10 characters.",
       "sendError": "Failed to send message. Please try again."

@@ -698,11 +698,15 @@ function initProjectFilter() {
     switch (id) {
       case 'name':
         if (!value.trim()) return i18n.t('formErrors.nameRequired');
-        if (value.trim().length < 2) return i18n.t('formErrors.nameMin');
+        if (value.trim().length < 3) return i18n.t('formErrors.nameMin');
         return '';
       case 'email':
         if (!value.trim()) return i18n.t('formErrors.emailRequired');
         if (!emailRegex.test(value.trim())) return i18n.t('formErrors.emailInvalid');
+        return '';
+      case 'subject':
+        if (!value.trim()) return i18n.t('formErrors.subjectRequired');
+        if (value.trim().length < 3) return i18n.t('formErrors.subjectMin');
         return '';
       case 'message':
         if (!value.trim()) return i18n.t('formErrors.messageRequired');
@@ -720,7 +724,7 @@ function initProjectFilter() {
   }
 
   // Validate on blur (validate after user finishes typing)
-  ['name', 'email', 'message'].forEach(id => {
+  ['name', 'email', 'subject', 'message'].forEach(id => {
     const input = $(`#${id}`);
     if (!input) return;
 
@@ -735,6 +739,42 @@ function initProjectFilter() {
     });
   });
 
+  // Real-time message validation and submit button gating
+  const messageInput = $('#message');
+
+  function isFormValid() {
+    return ['name', 'email', 'subject', 'message'].every(id => {
+      const el = $(`#${id}`);
+      return el && !getFieldError(id, el.value);
+    });
+  }
+
+  function updateSubmitState() {
+    submitBtn.disabled = !isFormValid();
+  }
+
+  if (messageInput) {
+    messageInput.addEventListener('input', () => {
+      const len = messageInput.value.trim().length;
+      if (len > 0 && len < 10) {
+        showError(messageInput, 'message-error', i18n.t('formErrors.messageMin'));
+      } else {
+        showError(messageInput, 'message-error', '');
+      }
+      updateSubmitState();
+    });
+  }
+
+  // Real-time validation for other fields
+  ['name', 'email', 'subject'].forEach(id => {
+    const el = $(`#${id}`);
+    if (!el) return;
+    el.addEventListener('input', () => updateSubmitState());
+  });
+
+  // Initialize button state
+  updateSubmitState();
+
   // Form submit
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -743,6 +783,7 @@ function initProjectFilter() {
     const fields = [
       { id: 'name',    el: $('#name')    },
       { id: 'email',   el: $('#email')   },
+      { id: 'subject', el: $('#subject') },
       { id: 'message', el: $('#message') },
     ];
 
@@ -800,6 +841,7 @@ function initProjectFilter() {
 
   function showSuccessState() {
     form.reset();
+    updateSubmitState();
     successEl.removeAttribute('aria-hidden');
     successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     showToast(i18n.t('toastSuccess'));
