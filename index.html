@@ -91,7 +91,7 @@
 
         <div class="hero__socials" aria-label="Redes sociais">
           <!-- GitHub -->
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub de Juan Jerrah">
+          <a href="https://github.com/juanjerrah" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub de Juan Jerrah">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
             </svg>
@@ -357,102 +357,137 @@
         <!-- Filter tabs -->
         <div class="projects__filters" role="tablist" aria-label="Filtrar projetos">
           <button class="filter-btn filter-btn--active" role="tab" aria-selected="true" data-filter="all">Todos</button>
-          <button class="filter-btn" role="tab" aria-selected="false" data-filter="web">Web</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="backend">Backend</button>
           <button class="filter-btn" role="tab" aria-selected="false" data-filter="api">API</button>
           <button class="filter-btn" role="tab" aria-selected="false" data-filter="mobile">Mobile</button>
         </div>
 
         <div class="projects__grid" id="projects-grid" role="list">
 
-          <!-- Project 1 -->
-          <article class="project-card" data-category="web" role="listitem">
+          <!-- Project 1: ensinai_go — EdTech backend in Go (most recent, private) -->
+          <article class="project-card project-card--featured" data-category="backend" role="listitem">
+            <div class="project-card__featured-badge" aria-label="Projeto em destaque">Destaque</div>
             <div class="project-card__image" aria-hidden="true">
-              <div class="project-card__mock project-card__mock--1">
-                <div class="mock-bar"></div>
-                <div class="mock-bar mock-bar--short"></div>
-                <div class="mock-row">
-                  <div class="mock-block"></div>
-                  <div class="mock-block mock-block--accent"></div>
+              <div class="project-card__mock project-card__mock--5">
+                <div class="mock-terminal">
+                  <span class="mock-terminal__prompt">$</span>
+                  <span class="mock-terminal__cmd">make run</span>
+                  <div class="mock-terminal__line c-str">✓ golangci-lint passed</div>
+                  <div class="mock-terminal__line c-prop">✓ Docker build OK</div>
+                  <div class="mock-terminal__line c-bool">→ Server listening :8080</div>
                 </div>
               </div>
             </div>
             <div class="project-card__body">
               <div class="project-card__tags">
-                <span class="tag">React</span>
-                <span class="tag">TypeScript</span>
-                <span class="tag">Tailwind</span>
+                <span class="tag">Golang</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Docker</span>
+                <span class="tag">CI/CD</span>
               </div>
-              <h3 class="project-card__title">DevBoard — Dashboard SaaS</h3>
+              <h3 class="project-card__title">Ensinai — Backend EdTech</h3>
               <p class="project-card__description">
-                Plataforma de analytics para times de desenvolvimento que centraliza
-                métricas de CI/CD, code quality e sprint velocity em tempo real.
+                Backend de plataforma educacional desenvolvido em Go com Gin, PostgreSQL,
+                Redis, Docker e pipeline CI/CD via GitHub Actions. Arquitetura limpa com
+                linting rigoroso (golangci) e containerização completa.
               </p>
               <div class="project-card__links">
-                <a href="#" class="project-link" aria-label="Ver demo do DevBoard">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-                  </svg>
-                  Demo
-                </a>
-                <a href="#" class="project-link" aria-label="Ver código do DevBoard no GitHub">
+                <a href="https://github.com/juanjerrah/ensinai_go" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver repositório ensinai_go no GitHub">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
                   </svg>
-                  Código
+                  GitHub
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Project 2 -->
-          <article class="project-card project-card--featured" data-category="api" role="listitem">
-            <div class="project-card__featured-badge" aria-label="Projeto em destaque">Destaque</div>
+          <!-- Project 2: e-commerce-microservice-Dotnet — C# .NET microservices -->
+          <article class="project-card" data-category="backend" role="listitem">
             <div class="project-card__image" aria-hidden="true">
               <div class="project-card__mock project-card__mock--2">
                 <div class="mock-endpoint">
                   <span class="mock-method">GET</span>
-                  <span>/api/users</span>
+                  <span>/catalog/products</span>
                 </div>
                 <div class="mock-endpoint">
                   <span class="mock-method mock-method--post">POST</span>
-                  <span>/api/auth</span>
+                  <span>/basket/checkout</span>
                 </div>
                 <div class="mock-endpoint">
                   <span class="mock-method mock-method--put">PUT</span>
-                  <span>/api/products/:id</span>
+                  <span>/order/:id/status</span>
                 </div>
               </div>
             </div>
             <div class="project-card__body">
               <div class="project-card__tags">
-                <span class="tag">Node.js</span>
-                <span class="tag">PostgreSQL</span>
+                <span class="tag">C# .NET</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Redis</span>
                 <span class="tag">Docker</span>
               </div>
-              <h3 class="project-card__title">Nexus API — REST Platform</h3>
+              <h3 class="project-card__title">E-commerce Microservices</h3>
               <p class="project-card__description">
-                API REST de alta disponibilidade com autenticação JWT, rate limiting,
-                documentação automática via Swagger e deploy containerizado.
-                Processa mais de 2M requisições por mês.
+                Arquitetura de microsserviços para e-commerce em .NET com serviços independentes
+                de catálogo (MongoDB) e carrinho (Redis), orquestrados via Docker Compose.
+                Padrão Clean Architecture com separação de domínios.
               </p>
               <div class="project-card__links">
-                <a href="#" class="project-link" aria-label="Ver documentação da Nexus API">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-                  </svg>
-                  Docs
-                </a>
-                <a href="#" class="project-link" aria-label="Ver código da Nexus API no GitHub">
+                <a href="https://github.com/juanjerrah/e-commerce-microservice-Dotnet" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver e-commerce-microservice-Dotnet no GitHub">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
                   </svg>
-                  Código
+                  GitHub
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Project 3 -->
+          <!-- Project 3: go_auth_api — Go JWT Auth API with Swagger -->
+          <article class="project-card" data-category="api" role="listitem">
+            <div class="project-card__image" aria-hidden="true">
+              <div class="project-card__mock project-card__mock--2">
+                <div class="mock-endpoint">
+                  <span class="mock-method mock-method--post">POST</span>
+                  <span>/api/auth/register</span>
+                </div>
+                <div class="mock-endpoint">
+                  <span class="mock-method mock-method--post">POST</span>
+                  <span>/api/auth/login</span>
+                </div>
+                <div class="mock-endpoint">
+                  <span class="mock-method">GET</span>
+                  <span>/swagger/index.html</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag">Golang</span>
+                <span class="tag">Gin</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Redis</span>
+                <span class="tag">JWT</span>
+              </div>
+              <h3 class="project-card__title">Go Auth API</h3>
+              <p class="project-card__description">
+                API de autenticação e autorização em Go com Gin, JWT, refresh tokens,
+                controle de acesso baseado em roles/permissões, MongoDB, Redis e
+                documentação completa via Swagger. Deploy com Docker Compose.
+              </p>
+              <div class="project-card__links">
+                <a href="https://github.com/juanjerrah/go_auth_api" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver go_auth_api no GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: ensinai-app — React Native / Expo mobile app -->
           <article class="project-card" data-category="mobile" role="listitem">
             <div class="project-card__image" aria-hidden="true">
               <div class="project-card__mock project-card__mock--3">
@@ -470,149 +505,98 @@
               <div class="project-card__tags">
                 <span class="tag">React Native</span>
                 <span class="tag">Expo</span>
-                <span class="tag">Firebase</span>
+                <span class="tag">TypeScript</span>
               </div>
-              <h3 class="project-card__title">Habitus — App de Hábitos</h3>
+              <h3 class="project-card__title">Ensinai — App Mobile EdTech</h3>
               <p class="project-card__description">
-                Aplicativo mobile de rastreamento de hábitos com sistema de gamificação,
-                notificações inteligentes e sincronização cross-device. 4.8 estrelas na App Store.
+                Aplicativo mobile de plataforma educacional construído com React Native e Expo
+                (TypeScript). Suporte a iOS e Android, nova arquitetura habilitada e integração
+                com backend Go, focado em experiência de aprendizado mobile-first.
               </p>
               <div class="project-card__links">
-                <a href="#" class="project-link" aria-label="Ver Habitus na App Store">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-                  </svg>
-                  App Store
-                </a>
-                <a href="#" class="project-link" aria-label="Ver código do Habitus no GitHub">
+                <a href="https://github.com/juanjerrah/ensinai-app" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver ensinai-app no GitHub">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
                   </svg>
-                  Código
+                  GitHub
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Project 4 -->
-          <article class="project-card" data-category="web" role="listitem">
-            <div class="project-card__image" aria-hidden="true">
-              <div class="project-card__mock project-card__mock--4">
-                <div class="mock-chart">
-                  <div class="mock-chart__bar" style="--h:60%"></div>
-                  <div class="mock-chart__bar" style="--h:85%"></div>
-                  <div class="mock-chart__bar" style="--h:45%"></div>
-                  <div class="mock-chart__bar" style="--h:70%"></div>
-                  <div class="mock-chart__bar mock-chart__bar--accent" style="--h:95%"></div>
-                  <div class="mock-chart__bar" style="--h:55%"></div>
-                </div>
-              </div>
-            </div>
-            <div class="project-card__body">
-              <div class="project-card__tags">
-                <span class="tag">Next.js</span>
-                <span class="tag">Python</span>
-                <span class="tag">AWS</span>
-              </div>
-              <h3 class="project-card__title">Investiq — Fintech Analytics</h3>
-              <p class="project-card__description">
-                Plataforma de análise de carteiras de investimento com IA preditiva,
-                integração com B3 em tempo real e relatórios personalizados.
-              </p>
-              <div class="project-card__links">
-                <a href="#" class="project-link" aria-label="Ver demo do Investiq">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-                  </svg>
-                  Demo
-                </a>
-                <a href="#" class="project-link" aria-label="Ver código do Investiq no GitHub">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-                  </svg>
-                  Código
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 5 -->
+          <!-- Project 5: Auth_Backend_CSharp — C# .NET JWT Auth with Repository Pattern -->
           <article class="project-card" data-category="api" role="listitem">
             <div class="project-card__image" aria-hidden="true">
-              <div class="project-card__mock project-card__mock--5">
-                <div class="mock-terminal">
-                  <span class="mock-terminal__prompt">$</span>
-                  <span class="mock-terminal__cmd">npm run deploy</span>
-                  <div class="mock-terminal__line c-str">✓ Build complete</div>
-                  <div class="mock-terminal__line c-prop">✓ Tests passed</div>
-                  <div class="mock-terminal__line c-bool">→ Deploying...</div>
+              <div class="project-card__mock project-card__mock--2">
+                <div class="mock-endpoint">
+                  <span class="mock-method mock-method--post">POST</span>
+                  <span>/auth/login</span>
+                </div>
+                <div class="mock-endpoint">
+                  <span class="mock-method mock-method--post">POST</span>
+                  <span>/auth/register</span>
+                </div>
+                <div class="mock-endpoint">
+                  <span class="mock-method">GET</span>
+                  <span>/users/profile</span>
                 </div>
               </div>
             </div>
             <div class="project-card__body">
               <div class="project-card__tags">
-                <span class="tag">Python</span>
-                <span class="tag">FastAPI</span>
-                <span class="tag">Redis</span>
+                <span class="tag">C# .NET</span>
+                <span class="tag">EF Core</span>
+                <span class="tag">JWT</span>
+                <span class="tag">Repository Pattern</span>
               </div>
-              <h3 class="project-card__title">Pipeline CLI — DevOps Tool</h3>
+              <h3 class="project-card__title">Auth Backend — C# .NET</h3>
               <p class="project-card__description">
-                Ferramenta CLI para automação de pipelines CI/CD com suporte a
-                múltiplos provedores cloud, notificações Slack e rollback automático.
+                API de autenticação em .NET com arquitetura Repository/Service,
+                autenticação JWT, Entity Framework Core com migrations e boas práticas
+                de separação de responsabilidades (Controllers, Models, Services).
               </p>
               <div class="project-card__links">
-                <a href="#" class="project-link" aria-label="Ver documentação do Pipeline CLI">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-                  </svg>
-                  Docs
-                </a>
-                <a href="#" class="project-link" aria-label="Ver código do Pipeline CLI no GitHub">
+                <a href="https://github.com/juanjerrah/Auth_Backend_CSharp" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver Auth_Backend_CSharp no GitHub">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
                   </svg>
-                  Código
+                  GitHub
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Project 6 -->
-          <article class="project-card" data-category="web" role="listitem">
+          <!-- Project 6: CleanArchitecture_Dotnet — Clean Architecture / DDD / SOLID in .NET -->
+          <article class="project-card" data-category="backend" role="listitem">
             <div class="project-card__image" aria-hidden="true">
-              <div class="project-card__mock project-card__mock--6">
-                <div class="mock-ecommerce">
-                  <div class="mock-product-grid">
-                    <div class="mock-product"></div>
-                    <div class="mock-product mock-product--accent"></div>
-                    <div class="mock-product"></div>
-                  </div>
+              <div class="project-card__mock project-card__mock--1">
+                <div class="mock-bar"></div>
+                <div class="mock-bar mock-bar--short"></div>
+                <div class="mock-row">
+                  <div class="mock-block"></div>
+                  <div class="mock-block mock-block--accent"></div>
                 </div>
               </div>
             </div>
             <div class="project-card__body">
               <div class="project-card__tags">
-                <span class="tag">React</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">Prisma</span>
+                <span class="tag">C# .NET</span>
+                <span class="tag">DDD</span>
+                <span class="tag">Clean Architecture</span>
+                <span class="tag">SOLID</span>
               </div>
-              <h3 class="project-card__title">ShopFlow — E-commerce</h3>
+              <h3 class="project-card__title">Clean Architecture — .NET</h3>
               <p class="project-card__description">
-                Plataforma e-commerce headless com checkout otimizado, painel admin
-                completo e integração com múltiplos meios de pagamento. R$ 1.2M em GMV.
+                Implementação de referência em .NET utilizando Clean Architecture em camadas,
+                princípios SOLID e Domain-Driven Design (DDD). Projeto de estudo estruturado
+                para servir de base em aplicações corporativas escaláveis.
               </p>
               <div class="project-card__links">
-                <a href="#" class="project-link" aria-label="Ver demo do ShopFlow">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-                  </svg>
-                  Demo
-                </a>
-                <a href="#" class="project-link" aria-label="Ver código do ShopFlow no GitHub">
+                <a href="https://github.com/juanjerrah/CleanArchitecture_Dotnet" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver CleanArchitecture_Dotnet no GitHub">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
                   </svg>
-                  Código
+                  GitHub
                 </a>
               </div>
             </div>
@@ -621,7 +605,7 @@
         </div>
 
         <div class="projects__more">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+          <a href="https://github.com/juanjerrah" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
             Ver todos no GitHub
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
