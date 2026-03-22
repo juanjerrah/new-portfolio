@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de Juan Jerrah Barreto de Oliveira — Desenvolvedor Full Stack apaixonado por criar experiências digitais de alto impacto." />
+  <title>Juan Jerrah — Desenvolvedor Full Stack</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- ══════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════ -->
+  <header class="navbar" role="banner">
+    <nav class="navbar__inner" aria-label="Navegação principal">
+      <a href="#hero" class="navbar__logo" aria-label="Ir para início">
+        <span class="logo-bracket">&lt;</span>JJ<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="navbar__links" role="list">
+        <li><a href="#hero" class="nav-link">Início</a></li>
+        <li><a href="#about" class="nav-link">Sobre</a></li>
+        <li><a href="#projects" class="nav-link">Projetos</a></li>
+        <li><a href="#contact" class="nav-link">Contato</a></li>
+      </ul>
+
+      <button
+        class="navbar__toggle"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menu de navegação">
+      <ul class="mobile-menu__links" role="list">
+        <li><a href="#hero" class="mobile-nav-link">Início</a></li>
+        <li><a href="#about" class="mobile-nav-link">Sobre</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projetos</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════════
+         HERO SECTION
+    ══════════════════════════════════════ -->
+    <section id="hero" class="hero" aria-labelledby="hero-heading">
+      <!-- Animated background grid -->
+      <div class="hero__grid" aria-hidden="true"></div>
+      <!-- Floating blobs -->
+      <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <p class="hero__greeting">Olá, meu nome é</p>
+        <h1 id="hero-heading" class="hero__name">
+          Juan Jerrah<br />
+          <span class="hero__name--accent">Barreto de Oliveira</span>
+        </h1>
+        <p class="hero__role">
+          Desenvolvedor <span class="typewriter" id="typewriter" aria-live="polite"></span>
+        </p>
+        <p class="hero__description">
+          Construo soluções digitais elegantes e de alto desempenho,
+          transformando ideias complexas em produtos que as pessoas adoram usar.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">
+            Ver Projetos
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn--secondary">Falar Comigo</a>
+        </div>
+
+        <div class="hero__socials" aria-label="Redes sociais">
+          <!-- GitHub -->
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub de Juan Jerrah">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn de Juan Jerrah">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <!-- Twitter / X -->
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter de Juan Jerrah">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero visual / code card -->
+      <div class="hero__visual" aria-hidden="true">
+        <div class="code-card">
+          <div class="code-card__header">
+            <span class="dot dot--red"></span>
+            <span class="dot dot--yellow"></span>
+            <span class="dot dot--green"></span>
+            <span class="code-card__filename">juan.js</span>
+          </div>
+          <pre class="code-card__body"><code><span class="c-keyword">const</span> <span class="c-name">developer</span> <span class="c-op">=</span> {
+  <span class="c-prop">name</span><span class="c-op">:</span> <span class="c-str">"Juan Jerrah"</span>,
+  <span class="c-prop">role</span><span class="c-op">:</span> <span class="c-str">"Full Stack Dev"</span>,
+  <span class="c-prop">skills</span><span class="c-op">:</span> [
+    <span class="c-str">"React"</span>, <span class="c-str">"Node.js"</span>,
+    <span class="c-str">"TypeScript"</span>, <span class="c-str">"Python"</span>
+  ],
+  <span class="c-prop">passion</span><span class="c-op">:</span> <span class="c-str">"Clean Code"</span>,
+  <span class="c-prop">available</span><span class="c-op">:</span> <span class="c-bool">true</span>
+};</code></pre>
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="scroll-hint" aria-hidden="true">
+        <span class="scroll-hint__text">Scroll</span>
+        <div class="scroll-hint__line"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         ABOUT SECTION
+    ══════════════════════════════════════ -->
+    <section id="about" class="about section" aria-labelledby="about-heading">
+      <div class="section__inner">
+        <div class="section__label" aria-hidden="true">01 — Sobre</div>
+        <h2 id="about-heading" class="section__title">Quem sou eu</h2>
+
+        <div class="about__grid">
+          <div class="about__text">
+            <p>
+              Sou um desenvolvedor full stack brasileiro apaixonado por criar
+              interfaces intuitivas e APIs robustas. Com <strong>5+ anos de experiência</strong>,
+              já ajudei startups e empresas de médio porte a transformarem suas visões
+              em produtos digitais de alto impacto.
+            </p>
+            <p>
+              Fora do código, gosto de contribuir com projetos open source,
+              escrever artigos técnicos e explorar trilhas de montanha.
+            </p>
+
+            <div class="tech-stack">
+              <p class="tech-stack__label">Stack principal:</p>
+              <ul class="tech-stack__list" role="list">
+                <li class="tech-badge">React</li>
+                <li class="tech-badge">Next.js</li>
+                <li class="tech-badge">TypeScript</li>
+                <li class="tech-badge">Node.js</li>
+                <li class="tech-badge">Python</li>
+                <li class="tech-badge">PostgreSQL</li>
+                <li class="tech-badge">Docker</li>
+                <li class="tech-badge">AWS</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="about__stats">
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="5">0</span>
+              <span class="stat-card__suffix">+</span>
+              <p class="stat-card__label">Anos de<br/>experiência</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="32">0</span>
+              <span class="stat-card__suffix">+</span>
+              <p class="stat-card__label">Projetos<br/>entregues</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="18">0</span>
+              <span class="stat-card__suffix">+</span>
+              <p class="stat-card__label">Clientes<br/>satisfeitos</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-card__number" data-target="12">0</span>
+              <span class="stat-card__suffix">k+</span>
+              <p class="stat-card__label">Linhas de código<br/>open source</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         PROJECTS SECTION
+    ══════════════════════════════════════ -->
+    <section id="projects" class="projects section" aria-labelledby="projects-heading">
+      <div class="section__inner">
+        <div class="section__label" aria-hidden="true">02 — Projetos</div>
+        <h2 id="projects-heading" class="section__title">Trabalhos em destaque</h2>
+        <p class="section__subtitle">
+          Uma seleção de projetos que demonstram minha capacidade de resolver
+          problemas reais com código elegante.
+        </p>
+
+        <!-- Filter tabs -->
+        <div class="projects__filters" role="tablist" aria-label="Filtrar projetos">
+          <button class="filter-btn filter-btn--active" role="tab" aria-selected="true" data-filter="all">Todos</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="web">Web</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="api">API</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="mobile">Mobile</button>
+        </div>
+
+        <div class="projects__grid" id="projects-grid" role="list">
+
+          <!-- Project 1 -->
+          <article class="project-card" data-category="web" role="listitem">
+            <div class="project-card__image" aria-hidden="true">
+              <div class="project-card__mock project-card__mock--1">
+                <div class="mock-bar"></div>
+                <div class="mock-bar mock-bar--short"></div>
+                <div class="mock-row">
+                  <div class="mock-block"></div>
+                  <div class="mock-block mock-block--accent"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Tailwind</span>
+              </div>
+              <h3 class="project-card__title">DevBoard — Dashboard SaaS</h3>
+              <p class="project-card__description">
+                Plataforma de analytics para times de desenvolvimento que centraliza
+                métricas de CI/CD, code quality e sprint velocity em tempo real.
+              </p>
+              <div class="project-card__links">
+                <a href="#" class="project-link" aria-label="Ver demo do DevBoard">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                  </svg>
+                  Demo
+                </a>
+                <a href="#" class="project-link" aria-label="Ver código do DevBoard no GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  Código
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card project-card--featured" data-category="api" role="listitem">
+            <div class="project-card__featured-badge" aria-label="Projeto em destaque">Destaque</div>
+            <div class="project-card__image" aria-hidden="true">
+              <div class="project-card__mock project-card__mock--2">
+                <div class="mock-endpoint">
+                  <span class="mock-method">GET</span>
+                  <span>/api/users</span>
+                </div>
+                <div class="mock-endpoint">
+                  <span class="mock-method mock-method--post">POST</span>
+                  <span>/api/auth</span>
+                </div>
+                <div class="mock-endpoint">
+                  <span class="mock-method mock-method--put">PUT</span>
+                  <span>/api/products/:id</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag">Node.js</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Docker</span>
+              </div>
+              <h3 class="project-card__title">Nexus API — REST Platform</h3>
+              <p class="project-card__description">
+                API REST de alta disponibilidade com autenticação JWT, rate limiting,
+                documentação automática via Swagger e deploy containerizado.
+                Processa mais de 2M requisições por mês.
+              </p>
+              <div class="project-card__links">
+                <a href="#" class="project-link" aria-label="Ver documentação da Nexus API">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                  </svg>
+                  Docs
+                </a>
+                <a href="#" class="project-link" aria-label="Ver código da Nexus API no GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  Código
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-category="mobile" role="listitem">
+            <div class="project-card__image" aria-hidden="true">
+              <div class="project-card__mock project-card__mock--3">
+                <div class="mock-phone">
+                  <div class="mock-phone__screen">
+                    <div class="mock-app-bar"></div>
+                    <div class="mock-list-item"></div>
+                    <div class="mock-list-item"></div>
+                    <div class="mock-list-item mock-list-item--short"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag">React Native</span>
+                <span class="tag">Expo</span>
+                <span class="tag">Firebase</span>
+              </div>
+              <h3 class="project-card__title">Habitus — App de Hábitos</h3>
+              <p class="project-card__description">
+                Aplicativo mobile de rastreamento de hábitos com sistema de gamificação,
+                notificações inteligentes e sincronização cross-device. 4.8 estrelas na App Store.
+              </p>
+              <div class="project-card__links">
+                <a href="#" class="project-link" aria-label="Ver Habitus na App Store">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                  </svg>
+                  App Store
+                </a>
+                <a href="#" class="project-link" aria-label="Ver código do Habitus no GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  Código
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card" data-category="web" role="listitem">
+            <div class="project-card__image" aria-hidden="true">
+              <div class="project-card__mock project-card__mock--4">
+                <div class="mock-chart">
+                  <div class="mock-chart__bar" style="--h:60%"></div>
+                  <div class="mock-chart__bar" style="--h:85%"></div>
+                  <div class="mock-chart__bar" style="--h:45%"></div>
+                  <div class="mock-chart__bar" style="--h:70%"></div>
+                  <div class="mock-chart__bar mock-chart__bar--accent" style="--h:95%"></div>
+                  <div class="mock-chart__bar" style="--h:55%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag">Next.js</span>
+                <span class="tag">Python</span>
+                <span class="tag">AWS</span>
+              </div>
+              <h3 class="project-card__title">Investiq — Fintech Analytics</h3>
+              <p class="project-card__description">
+                Plataforma de análise de carteiras de investimento com IA preditiva,
+                integração com B3 em tempo real e relatórios personalizados.
+              </p>
+              <div class="project-card__links">
+                <a href="#" class="project-link" aria-label="Ver demo do Investiq">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                  </svg>
+                  Demo
+                </a>
+                <a href="#" class="project-link" aria-label="Ver código do Investiq no GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  Código
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card" data-category="api" role="listitem">
+            <div class="project-card__image" aria-hidden="true">
+              <div class="project-card__mock project-card__mock--5">
+                <div class="mock-terminal">
+                  <span class="mock-terminal__prompt">$</span>
+                  <span class="mock-terminal__cmd">npm run deploy</span>
+                  <div class="mock-terminal__line c-str">✓ Build complete</div>
+                  <div class="mock-terminal__line c-prop">✓ Tests passed</div>
+                  <div class="mock-terminal__line c-bool">→ Deploying...</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Redis</span>
+              </div>
+              <h3 class="project-card__title">Pipeline CLI — DevOps Tool</h3>
+              <p class="project-card__description">
+                Ferramenta CLI para automação de pipelines CI/CD com suporte a
+                múltiplos provedores cloud, notificações Slack e rollback automático.
+              </p>
+              <div class="project-card__links">
+                <a href="#" class="project-link" aria-label="Ver documentação do Pipeline CLI">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                  </svg>
+                  Docs
+                </a>
+                <a href="#" class="project-link" aria-label="Ver código do Pipeline CLI no GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  Código
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project-card" data-category="web" role="listitem">
+            <div class="project-card__image" aria-hidden="true">
+              <div class="project-card__mock project-card__mock--6">
+                <div class="mock-ecommerce">
+                  <div class="mock-product-grid">
+                    <div class="mock-product"></div>
+                    <div class="mock-product mock-product--accent"></div>
+                    <div class="mock-product"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span class="tag">React</span>
+                <span class="tag">Stripe</span>
+                <span class="tag">Prisma</span>
+              </div>
+              <h3 class="project-card__title">ShopFlow — E-commerce</h3>
+              <p class="project-card__description">
+                Plataforma e-commerce headless com checkout otimizado, painel admin
+                completo e integração com múltiplos meios de pagamento. R$ 1.2M em GMV.
+              </p>
+              <div class="project-card__links">
+                <a href="#" class="project-link" aria-label="Ver demo do ShopFlow">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                  </svg>
+                  Demo
+                </a>
+                <a href="#" class="project-link" aria-label="Ver código do ShopFlow no GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  Código
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="projects__more">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+            Ver todos no GitHub
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CONTACT SECTION
+    ══════════════════════════════════════ -->
+    <section id="contact" class="contact section" aria-labelledby="contact-heading">
+      <div class="contact__glow" aria-hidden="true"></div>
+      <div class="section__inner">
+        <div class="section__label" aria-hidden="true">03 — Contato</div>
+        <h2 id="contact-heading" class="section__title">Vamos trabalhar juntos?</h2>
+        <p class="section__subtitle">
+          Estou disponível para freelances, projetos full-time e colaborações.
+          Me mande uma mensagem — responderei em até 24h.
+        </p>
+
+        <div class="contact__layout">
+          <!-- Contact form -->
+          <div class="contact__form-wrapper">
+            <form class="contact-form" id="contact-form" novalidate aria-label="Formulário de contato">
+              <div class="form-group">
+                <label for="name" class="form-label">
+                  Nome <span class="required" aria-label="campo obrigatório">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  placeholder="Seu nome completo"
+                  autocomplete="name"
+                  required
+                  aria-required="true"
+                  aria-describedby="name-error"
+                />
+                <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">
+                  E-mail <span class="required" aria-label="campo obrigatório">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="seu@email.com"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                  aria-describedby="email-error"
+                />
+                <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">Assunto</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  class="form-input"
+                  placeholder="Ex: Proposta de projeto"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">
+                  Mensagem <span class="required" aria-label="campo obrigatório">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-input form-textarea"
+                  placeholder="Conte-me sobre seu projeto ou ideia..."
+                  rows="5"
+                  required
+                  aria-required="true"
+                  aria-describedby="message-error"
+                ></textarea>
+                <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+                <span class="btn__text">Enviar Mensagem</span>
+                <span class="btn__spinner" aria-hidden="true"></span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="btn__icon">
+                  <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 19-7z"/>
+                </svg>
+              </button>
+
+              <!-- Success message -->
+              <div class="form-success" id="form-success" role="alert" aria-live="polite" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                Mensagem enviada! Responderei em breve.
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact info -->
+          <div class="contact__info">
+            <h3 class="contact__info-title">Outras formas de contato</h3>
+
+            <ul class="contact__channels" role="list">
+              <li class="contact-channel">
+                <div class="contact-channel__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div class="contact-channel__text">
+                  <span class="contact-channel__label">E-mail</span>
+                  <a href="mailto:juan@juanjerrah.dev" class="contact-channel__value">juan@juanjerrah.dev</a>
+                </div>
+              </li>
+
+              <li class="contact-channel">
+                <div class="contact-channel__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </div>
+                <div class="contact-channel__text">
+                  <span class="contact-channel__label">LinkedIn</span>
+                  <a href="https://linkedin.com/in/juanjerrah" target="_blank" rel="noopener noreferrer" class="contact-channel__value">in/juanjerrah</a>
+                </div>
+              </li>
+
+              <li class="contact-channel">
+                <div class="contact-channel__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                </div>
+                <div class="contact-channel__text">
+                  <span class="contact-channel__label">GitHub</span>
+                  <a href="https://github.com/juanjerrah" target="_blank" rel="noopener noreferrer" class="contact-channel__value">@juanjerrah</a>
+                </div>
+              </li>
+
+              <li class="contact-channel">
+                <div class="contact-channel__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div class="contact-channel__text">
+                  <span class="contact-channel__label">Localização</span>
+                  <span class="contact-channel__value">São Paulo, Brasil</span>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Availability badge -->
+            <div class="availability-badge" aria-label="Status: disponível para novos projetos">
+              <span class="availability-dot" aria-hidden="true"></span>
+              Disponível para novos projetos
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <p class="footer__copy">
+        &copy; 2026 Juan Jerrah Barreto de Oliveira. Feito com dedicação e muito café.
+      </p>
+      <a href="#hero" class="back-to-top" aria-label="Voltar ao topo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 15l-6-6-6 6"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
