@@ -1,0 +1,6 @@
+# Agent tooling (não faz parte do site)
+.claude/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
