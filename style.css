@@ -394,6 +394,54 @@ input, textarea {
   background: var(--color-bg-elevated);
 }
 
+/* Language Switcher */
+.lang-switcher {
+  margin-left: var(--space-2);
+}
+
+.lang-select {
+  padding: 4px 28px 4px 12px;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%233b82f6' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  min-height: 32px;
+  transition: box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.lang-select:hover,
+.lang-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary-glow);
+}
+
+.lang-select option {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+}
+
+.mobile-menu__links .lang-switcher {
+  margin-left: 0;
+  margin-top: var(--space-4);
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-menu__links .lang-select {
+  font-size: var(--text-sm);
+  padding: var(--space-2) 36px var(--space-2) var(--space-6);
+}
+
 .navbar__toggle {
   display: none;
   flex-direction: column;

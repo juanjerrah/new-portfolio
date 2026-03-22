@@ -4,6 +4,37 @@
     "description": "Portfolio de Juan Jerrah Barreto de Oliveira — Desenvolvedor Full Stack apaixonado por criar experiências digitais de alto impacto."
   },
 
+  "i18n": {
+    "formLabels": {
+      "name": "Nome",
+      "email": "E-mail",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "required": "campo obrigatório"
+    },
+    "formErrors": {
+      "nameRequired": "O nome é obrigatório.",
+      "nameMin": "O nome deve ter ao menos 2 caracteres.",
+      "emailRequired": "O e-mail é obrigatório.",
+      "emailInvalid": "Informe um e-mail válido.",
+      "messageRequired": "A mensagem é obrigatória.",
+      "messageMin": "A mensagem deve ter ao menos 10 caracteres.",
+      "sendError": "Erro ao enviar mensagem. Tente novamente."
+    },
+    "toastSuccess": "Mensagem enviada com sucesso!",
+    "scrollHint": "Scroll",
+    "skipLink": "Pular para o conteúdo principal",
+    "navAriaLabel": "Navegação principal",
+    "menuOpen": "Abrir menu de navegação",
+    "menuClose": "Fechar menu de navegação",
+    "menuAriaLabel": "Menu de navegação",
+    "timelineAriaLabel": "Linha do tempo de experiências profissionais",
+    "filterAriaLabel": "Filtrar projetos",
+    "techAriaLabel": "Tecnologias utilizadas",
+    "backToTop": "Voltar ao topo",
+    "socialAriaLabel": "Redes sociais"
+  },
+
   "navbar": {
     "links": [
       { "href": "#hero",       "label": "Início" },

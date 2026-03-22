@@ -26,6 +26,67 @@ function debounce(fn, delay) {
 }
 
 // ──────────────────────────────────────
+// I18N — Internationalization module
+// ──────────────────────────────────────
+
+const i18n = (() => {
+  const SUPPORTED_LANGS = ['pt-BR', 'en', 'es'];
+  const DEFAULT_LANG = 'en';
+  const STORAGE_KEY = 'portfolio-lang';
+
+  // Label shown on the switcher button for each locale
+  const LANG_LABELS = { 'pt-BR': 'PT', 'en': 'EN', 'es': 'ES' };
+
+  // Next language in the rotation cycle
+  const NEXT_LANG = { 'pt-BR': 'en', 'en': 'es', 'es': 'pt-BR' };
+
+  let currentLang = DEFAULT_LANG;
+  let currentData = null;
+
+  function detectLang() {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored && SUPPORTED_LANGS.includes(stored)) return stored;
+    const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    if (browserLang.startsWith('en')) return 'en';
+    if (browserLang.startsWith('es')) return 'es';
+    return DEFAULT_LANG;
+  }
+
+  function getNextLang() { return NEXT_LANG[currentLang]; }
+  function getLangLabel(lang) { return LANG_LABELS[lang || currentLang]; }
+
+  function getLang() { return currentLang; }
+  function getData() { return currentData; }
+
+  function setLang(lang) {
+    if (!SUPPORTED_LANGS.includes(lang)) return;
+    currentLang = lang;
+    localStorage.setItem(STORAGE_KEY, lang);
+    document.documentElement.lang = lang;
+  }
+
+  function t(key) {
+    if (!currentData || !currentData.i18n) return key;
+    const parts = key.split('.');
+    let val = currentData.i18n;
+    for (const p of parts) {
+      if (val == null) return key;
+      val = val[p];
+    }
+    return val || key;
+  }
+
+  async function loadLang(lang) {
+    setLang(lang);
+    const response = await fetch(`locales/${lang}.json`);
+    currentData = await response.json();
+    return currentData;
+  }
+
+  return { detectLang, getLang, getNextLang, getLangLabel, getData, setLang, t, loadLang, SUPPORTED_LANGS };
+})();
+
+// ──────────────────────────────────────
 // NAVBAR — scroll behaviour + mobile menu
 // ──────────────────────────────────────
 
@@ -46,14 +107,14 @@ function debounce(fn, delay) {
     mobileMenu.classList.add('mobile-menu--open');
     mobileMenu.setAttribute('aria-hidden', 'false');
     toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'Fechar menu de navegação');
+    toggle.setAttribute('aria-label', i18n.t('menuClose'));
   }
 
   function closeMenu() {
     mobileMenu.classList.remove('mobile-menu--open');
     mobileMenu.setAttribute('aria-hidden', 'true');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Abrir menu de navegação');
+    toggle.setAttribute('aria-label', i18n.t('menuOpen'));
   }
 
   toggle.addEventListener('click', () => {
@@ -139,22 +200,12 @@ function initTypewriter(roles) {
 }
 
 // ──────────────────────────────────────
-// CONTENT — Carrega data.json e injeta no DOM
+// CONTENT — Loads locale JSON and injects into DOM
 // ──────────────────────────────────────
 
-(async function loadContent() {
-  const FALLBACK_ROLES = ['Full Stack', 'Backend', 'C# .NET', 'Golang', 'Microservices'];
+let typewriterStarted = false;
 
-  let data;
-  try {
-    const response = await fetch('data.json');
-    data = await response.json();
-  } catch (e) {
-    console.warn('Falha ao carregar data.json; usando conteúdo estático.');
-    initTypewriter(FALLBACK_ROLES);
-    return;
-  }
-
+function renderContent(data) {
   const { meta, navbar, hero, about, experience, projects, contact, footer } = data;
 
   function setText(sel, text) {
@@ -277,19 +328,41 @@ function initTypewriter(roles) {
   const footerCopy = document.querySelector('.footer__copy');
   if (footerCopy) footerCopy.innerHTML = footer.copy;
 
-  // ── Navbar links
+  // ── Navbar links + language switcher
+  const curLang = i18n.getLang();
+  const opt = (val, label) => `<option value="${val}"${curLang === val ? ' selected' : ''}>${label}</option>`;
+  const langSelectHTML = `<li class="lang-switcher">
+    <select class="lang-select" aria-label="Select language">
+      ${opt('pt-BR', 'PT')}
+      ${opt('en', 'EN')}
+      ${opt('es', 'ES')}
+    </select>
+  </li>`;
+
   const desktopNav = document.querySelector('.navbar__links');
   const mobileNav  = document.querySelector('.mobile-menu__links');
   if (desktopNav) {
     desktopNav.innerHTML = navbar.links
       .map(l => `<li><a href="${l.href}" class="nav-link">${l.label}</a></li>`)
-      .join('');
+      .join('') + langSelectHTML;
   }
   if (mobileNav) {
     mobileNav.innerHTML = navbar.links
       .map(l => `<li><a href="${l.href}" class="mobile-nav-link">${l.label}</a></li>`)
-      .join('');
+      .join('') + langSelectHTML;
   }
+
+  // Attach language switcher events
+  $$('.lang-select').forEach(sel => {
+    sel.addEventListener('change', async () => {
+      try {
+        const newData = await i18n.loadLang(sel.value);
+        renderContent(newData);
+      } catch (e) {
+        console.warn('Failed to load language:', sel.value);
+      }
+    });
+  });
 
   // ── Hero socials
   const SOCIAL_SVG = {
@@ -336,7 +409,7 @@ function initTypewriter(roles) {
               </p>
             </div>
             <ul class="timeline__highlights" role="list">${hiHTML}</ul>
-            <div class="timeline__tags" role="list" aria-label="Tecnologias utilizadas">${tagHTML}</div>
+            <div class="timeline__tags" role="list" aria-label="${i18n.t('techAriaLabel')}">${tagHTML}</div>
           </div>
         </article>`;
     }).join('');
@@ -420,13 +493,58 @@ function initTypewriter(roles) {
     }).join('');
   }
 
+  // ── Update form labels with i18n
+  const formLabels = data.i18n?.formLabels;
+  if (formLabels) {
+    const nameLabel = $('label[for="name"]');
+    if (nameLabel) nameLabel.innerHTML = `${formLabels.name} <span class="required" aria-label="${formLabels.required}">*</span>`;
+    const emailLabel = $('label[for="email"]');
+    if (emailLabel) emailLabel.innerHTML = `${formLabels.email} <span class="required" aria-label="${formLabels.required}">*</span>`;
+    const subjectLabel = $('label[for="subject"]');
+    if (subjectLabel) subjectLabel.textContent = formLabels.subject;
+    const messageLabel = $('label[for="message"]');
+    if (messageLabel) messageLabel.innerHTML = `${formLabels.message} <span class="required" aria-label="${formLabels.required}">*</span>`;
+  }
+
+  // ── Update scroll hint
+  const scrollHintText = $('.scroll-hint__text');
+  if (scrollHintText) scrollHintText.textContent = i18n.t('scrollHint');
+
+  // ── Update skip link
+  const skipLink = $('.skip-link');
+  if (skipLink) skipLink.textContent = i18n.t('skipLink');
+
+  // ── Update back to top
+  const backToTop = $('.back-to-top');
+  if (backToTop) backToTop.setAttribute('aria-label', i18n.t('backToTop'));
+
   // ── Inicia o typewriter com os papéis do data.json
-  initTypewriter(hero.typewriterRoles);
+  if (!typewriterStarted) {
+    initTypewriter(hero.typewriterRoles);
+    typewriterStarted = true;
+  }
 
   // ── Init dynamic features (require rendered DOM)
   initProjectFilter();
   initScrollReveal();
   initCounters();
+}
+
+// ──────────────────────────────────────
+// BOOT — Load language and render
+// ──────────────────────────────────────
+
+(async function boot() {
+  const FALLBACK_ROLES = ['Full Stack', 'Backend', 'C# .NET', 'Golang', 'Microservices'];
+  const lang = i18n.detectLang();
+
+  try {
+    const data = await i18n.loadLang(lang);
+    renderContent(data);
+  } catch (e) {
+    console.warn('Failed to load locale; using fallback.', e);
+    initTypewriter(FALLBACK_ROLES);
+  }
 })();
 
 // ──────────────────────────────────────
@@ -579,16 +697,16 @@ function initProjectFilter() {
   function getFieldError(id, value) {
     switch (id) {
       case 'name':
-        if (!value.trim()) return 'O nome é obrigatório.';
-        if (value.trim().length < 2) return 'O nome deve ter ao menos 2 caracteres.';
+        if (!value.trim()) return i18n.t('formErrors.nameRequired');
+        if (value.trim().length < 2) return i18n.t('formErrors.nameMin');
         return '';
       case 'email':
-        if (!value.trim()) return 'O e-mail é obrigatório.';
-        if (!emailRegex.test(value.trim())) return 'Informe um e-mail válido.';
+        if (!value.trim()) return i18n.t('formErrors.emailRequired');
+        if (!emailRegex.test(value.trim())) return i18n.t('formErrors.emailInvalid');
         return '';
       case 'message':
-        if (!value.trim()) return 'A mensagem é obrigatória.';
-        if (value.trim().length < 10) return 'A mensagem deve ter ao menos 10 caracteres.';
+        if (!value.trim()) return i18n.t('formErrors.messageRequired');
+        if (value.trim().length < 10) return i18n.t('formErrors.messageMin');
         return '';
       default:
         return '';
@@ -645,13 +763,34 @@ function initProjectFilter() {
       return;
     }
 
-    // Simulate async submission
+    // Submit via Formsubmit.co
     setSubmitting(true);
 
-    setTimeout(() => {
-      setSubmitting(false);
-      showSuccessState();
-    }, 1800);
+    const formData = {
+      name:    $('#name').value.trim(),
+      email:   $('#email').value.trim(),
+      subject: $('#subject').value.trim() || 'Contato via Portfolio',
+      message: $('#message').value.trim(),
+      _subject: $('#subject').value.trim() || 'Novo contato via Portfolio',
+    };
+
+    fetch('https://formsubmit.co/ajax/3ad2aa830f31f3400057a1f3561055de', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+      .then(res => {
+        if (!res.ok) throw new Error('Erro ao enviar');
+        return res.json();
+      })
+      .then(() => {
+        setSubmitting(false);
+        showSuccessState();
+      })
+      .catch(() => {
+        setSubmitting(false);
+        showToast(i18n.t('formErrors.sendError'));
+      });
   });
 
   function setSubmitting(loading) {
@@ -663,7 +802,7 @@ function initProjectFilter() {
     form.reset();
     successEl.removeAttribute('aria-hidden');
     successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    showToast('Mensagem enviada com sucesso!');
+    showToast(i18n.t('toastSuccess'));
 
     setTimeout(() => {
       successEl.setAttribute('aria-hidden', 'true');
