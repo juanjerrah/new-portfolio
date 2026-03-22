@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "title": "Juan Jerrah — Desenvolvedor Full Stack",
+    "description": "Portfolio de Juan Jerrah Barreto de Oliveira — Desenvolvedor Full Stack apaixonado por criar experiências digitais de alto impacto."
+  },
+
+  "navbar": {
+    "links": [
+      { "href": "#hero",       "label": "Início" },
+      { "href": "#about",      "label": "Sobre" },
+      { "href": "#experience", "label": "Experiência" },
+      { "href": "#projects",   "label": "Projetos" },
+      { "href": "#contact",    "label": "Contato" }
+    ]
+  },
+
+  "hero": {
+    "greeting": "Olá, meu nome é",
+    "name": "Juan ",
+    "nameAccent": "Jerrah",
+    "rolePrefix": "Desenvolvedor",
+    "typewriterRoles": ["Full Stack", "Backend", "C# .NET", "Golang", "Microservices"],
+    "description": "Construo soluções digitais elegantes e de alto desempenho, transformando ideias complexas em produtos que as pessoas adoram usar.",
+    "ctaPrimary": "Ver Projetos",
+    "ctaSecondary": "Falar Comigo",
+    "socials": [
+      { "type": "github",   "label": "GitHub de Juan Jerrah",   "href": "https://github.com/juanjerrah" },
+      { "type": "linkedin", "label": "LinkedIn de Juan Jerrah", "href": "https://linkedin.com/in/juanjerrahdev" },
+      { "type": "twitter",  "label": "Twitter de Juan Jerrah",  "href": "https://twitter.com" }
+    ]
+  },
+
+  "about": {
+    "sectionLabel": "01 — Sobre",
+    "title": "Quem sou eu",
+    "paragraphs": [
+      "Sou um engenheiro de software brasileiro especializado em backend e sistemas fullstack, com <strong>4+ anos de experiência</strong> construindo microsserviços escaláveis e soluções de alto impacto em C# .NET e Golang. Já atuei em projetos de expansão internacional, otimização de performance e prevenção de fraudes.",
+      "Tenho experiência com cloud (AWS, Azure, GCP), mensageria, arquitetura limpa (DDD) e práticas ágeis. Gosto de resolver problemas complexos e colaborar com times globais para entregar software confiável e eficiente."
+    ],
+    "techStackLabel": "Stack principal:",
+    "techStack": [
+      "C# .NET", "Golang", "GraphQL", "React", "Angular",
+      "PostgreSQL", "MongoDB", "Redis", "Kafka", "AWS", "GCP", "Docker"
+    ],
+    "stats": [
+      { "target": 4,  "suffix": "+", "label": "Anos de<br/>experiência" },
+      { "target": 3,  "suffix": "",  "label": "Empresas<br/>onde atuei" },
+      { "target": 85, "suffix": "%", "label": "Redução de<br/>fraudes (Localiza)" },
+      { "target": 3,  "suffix": "",  "label": "Idiomas<br/>fluentes" }
+    ]
+  },
+
+  "experience": {
+    "sectionLabel": "02 — Experiência",
+    "title": "Trajetória profissional",
+    "subtitle": "Mais de 4 anos construindo sistemas escaláveis e de alto impacto, desde startups até expansões internacionais em empresas de grande porte.",
+    "items": [
+      {
+        "period": "Nov 2023 — Presente",
+        "badge": "Atual",
+        "isCurrent": true,
+        "isLast": false,
+        "side": "left",
+        "role": "Software Engineer",
+        "company": "Localiza&amp;Co",
+        "location": "Belo Horizonte, BR — Remoto",
+        "highlights": [
+          "Participou da construção do sistema de contratos de locação de veículos no México, utilizando microfrontends React e microsserviços .NET, suportando a expansão da Localiza pela América Central e do Norte.",
+          "Desenvolveu portal de faturamento em .NET e Angular para o México, substituindo sistema legado e reduzindo <strong>$20k/mês</strong> em custos, processando mais de <strong>$150k/mês</strong> em transações.",
+          "Implementou sistema antifraude com .NET e GraphQL integrado ao Metamap, reduzindo incidentes de fraude em mais de <strong>85%</strong> — de 50+ para menos de 7 por mês.",
+          "Integrou sistemas mexicanos com GCP BigQuery, fornecendo dados ao time de ciência de dados para insights operacionais estratégicos."
+        ],
+        "tags": ["C# .NET", "Angular", "React", "GraphQL", "GCP BigQuery", "Microservices", "Datadog", "PostgreSQL"]
+      },
+      {
+        "period": "Jun 2021 — Nov 2023",
+        "badge": "2 anos 5 meses",
+        "isCurrent": false,
+        "isLast": false,
+        "side": "right",
+        "role": "Software Engineer",
+        "company": "Avonale Workplace",
+        "location": "Aracaju, BR — Remoto",
+        "highlights": [
+          "Desenvolveu CRM para vendas e transferências de veículos com C# .NET Core, DDD e Clean Architecture, integrando APIs RESTful com PostgreSQL, MongoDB e AWS (S3, SQS), <strong>reduzindo o tempo de resposta em +30%</strong>.",
+          "Otimizou leilão de veículos em tempo real via tuning de queries PostgreSQL com índices, GraphQL e cluster Redis, alcançando <strong>~65% de redução no tempo de resposta</strong>.",
+          "Mentorou estagiários em C# .NET, acelerando o onboarding e aumentando a autonomia e produtividade do time."
+        ],
+        "tags": ["C# .NET", "GraphQL", "PostgreSQL", "MongoDB", "Redis", "Vue.js", "AWS", "Clean Architecture"]
+      },
+      {
+        "period": "Abr 2021 — Dez 2021",
+        "badge": "Estágio",
+        "isCurrent": false,
+        "isLast": true,
+        "side": "left",
+        "role": "Intern Software Engineer",
+        "company": "Ifsmart",
+        "location": "Aracaju, BR — Presencial",
+        "highlights": [
+          "Construiu plataforma de e-commerce com Golang, GraphQL, Next.js e Tailwind para uma joalheria, permitindo que a microempreendedora expandisse suas vendas por toda a região Nordeste.",
+          "Liderou o time de desenvolvimento e conduziu cerimônias ágeis para manter alinhamento, velocidade e consistência nas entregas."
+        ],
+        "tags": ["Golang", "GraphQL", "Next.js", "MongoDB", "Tailwind", "NestJS"]
+      }
+    ]
+  },
+
+  "projects": {
+    "sectionLabel": "03 — Projetos",
+    "title": "Trabalhos em destaque",
+    "subtitle": "Uma seleção de projetos que demonstram minha capacidade de resolver problemas reais com código elegante.",
+    "filters": [
+      { "label": "Todos",   "value": "all",     "default": true },
+      { "label": "Backend", "value": "backend", "default": false },
+      { "label": "API",     "value": "api",     "default": false },
+      { "label": "Mobile",  "value": "mobile",  "default": false }
+    ],
+    "viewAllLabel": "Ver todos no GitHub",
+    "viewAllUrl": "https://github.com/juanjerrah",
+    "items": [
+      {
+        "id": "ensinai-go",
+        "title": "Ensinai — Backend EdTech",
+        "description": "Backend de plataforma educacional desenvolvido em Go com Gin, PostgreSQL, Redis, Docker e pipeline CI/CD via GitHub Actions. Arquitetura limpa com linting rigoroso (golangci) e containerização completa.",
+        "tags": ["Golang", "PostgreSQL", "Docker", "CI/CD"],
+        "category": "backend",
+        "featured": true,
+        "featuredLabel": "Destaque",
+        "github": "https://github.com/juanjerrah/ensinai_go",
+        "githubLabel": "GitHub",
+        "mockType": "terminal",
+        "mockTerminal": {
+          "cmd": "make run",
+          "lines": [
+            { "cls": "c-str",  "text": "✓ golangci-lint passed" },
+            { "cls": "c-prop", "text": "✓ Docker build OK" },
+            { "cls": "c-bool", "text": "→ Server listening :8080" }
+          ]
+        }
+      },
+      {
+        "id": "ecommerce-dotnet",
+        "title": "E-commerce Microservices",
+        "description": "Arquitetura de microsserviços para e-commerce em .NET com serviços independentes de catálogo (MongoDB) e carrinho (Redis), orquestrados via Docker Compose. Padrão Clean Architecture com separação de domínios.",
+        "tags": ["C# .NET", "MongoDB", "Redis", "Docker"],
+        "category": "backend",
+        "featured": false,
+        "github": "https://github.com/juanjerrah/e-commerce-microservice-Dotnet",
+        "githubLabel": "GitHub",
+        "mockType": "endpoints",
+        "mockEndpoints": [
+          { "method": "GET",  "path": "/catalog/products" },
+          { "method": "POST", "path": "/basket/checkout" },
+          { "method": "PUT",  "path": "/order/:id/status" }
+        ]
+      },
+      {
+        "id": "go-auth-api",
+        "title": "Go Auth API",
+        "description": "API de autenticação e autorização em Go com Gin, JWT, refresh tokens, controle de acesso baseado em roles/permissões, MongoDB, Redis e documentação completa via Swagger. Deploy com Docker Compose.",
+        "tags": ["Golang", "Gin", "MongoDB", "Redis", "JWT"],
+        "category": "api",
+        "featured": false,
+        "github": "https://github.com/juanjerrah/go_auth_api",
+        "githubLabel": "GitHub",
+        "mockType": "endpoints",
+        "mockEndpoints": [
+          { "method": "POST", "path": "/api/auth/register" },
+          { "method": "POST", "path": "/api/auth/login" },
+          { "method": "GET",  "path": "/swagger/index.html" }
+        ]
+      },
+      {
+        "id": "ensinai-app",
+        "title": "Ensinai — App Mobile EdTech",
+        "description": "Aplicativo mobile de plataforma educacional construído com React Native e Expo (TypeScript). Suporte a iOS e Android, nova arquitetura habilitada e integração com backend Go, focado em experiência de aprendizado mobile-first.",
+        "tags": ["React Native", "Expo", "TypeScript"],
+        "category": "mobile",
+        "featured": false,
+        "github": "https://github.com/juanjerrah/ensinai-app",
+        "githubLabel": "GitHub",
+        "mockType": "phone"
+      },
+      {
+        "id": "auth-csharp",
+        "title": "Auth Backend — C# .NET",
+        "description": "API de autenticação em .NET com arquitetura Repository/Service, autenticação JWT, Entity Framework Core com migrations e boas práticas de separação de responsabilidades (Controllers, Models, Services).",
+        "tags": ["C# .NET", "EF Core", "JWT", "Repository Pattern"],
+        "category": "api",
+        "featured": false,
+        "github": "https://github.com/juanjerrah/Auth_Backend_CSharp",
+        "githubLabel": "GitHub",
+        "mockType": "endpoints",
+        "mockEndpoints": [
+          { "method": "POST", "path": "/auth/login" },
+          { "method": "POST", "path": "/auth/register" },
+          { "method": "GET",  "path": "/users/profile" }
+        ]
+      },
+      {
+        "id": "clean-arch-dotnet",
+        "title": "Clean Architecture — .NET",
+        "description": "Implementação de referência em .NET utilizando Clean Architecture em camadas, princípios SOLID e Domain-Driven Design (DDD). Projeto de estudo estruturado para servir de base em aplicações corporativas escaláveis.",
+        "tags": ["C# .NET", "DDD", "Clean Architecture", "SOLID"],
+        "category": "backend",
+        "featured": false,
+        "github": "https://github.com/juanjerrah/CleanArchitecture_Dotnet",
+        "githubLabel": "GitHub",
+        "mockType": "generic"
+      }
+    ]
+  },
+
+  "contact": {
+    "sectionLabel": "04 — Contato",
+    "title": "Vamos trabalhar juntos?",
+    "subtitle": "Estou disponível para freelances, projetos full-time e colaborações. Me mande uma mensagem — responderei em até 24h.",
+    "form": {
+      "namePlaceholder": "Seu nome completo",
+      "emailPlaceholder": "seu@email.com",
+      "subjectPlaceholder": "Ex: Proposta de projeto",
+      "messagePlaceholder": "Conte-me sobre seu projeto ou ideia...",
+      "submitLabel": "Enviar Mensagem",
+      "successMessage": "Mensagem enviada! Responderei em breve."
+    },
+    "infoTitle": "Outras formas de contato",
+    "channels": [
+      { "type": "email",    "label": "E-mail",      "value": "juanjerrah15@gmail.com",    "href": "mailto:juanjerrah15@gmail.com" },
+      { "type": "linkedin", "label": "LinkedIn",    "value": "in/juanjerrahdev",          "href": "https://linkedin.com/in/juanjerrahdev" },
+      { "type": "github",   "label": "GitHub",      "value": "@juanjerrah",               "href": "https://github.com/juanjerrah" },
+      { "type": "location", "label": "Localização", "value": "Aracaju, Sergipe, Brasil",  "href": null }
+    ],
+    "availabilityText": "Disponível para novos projetos"
+  },
+
+  "footer": {
+    "copy": "&copy; 2026 Juan Jerrah Barreto de Oliveira. Feito com dedicação e muito café."
+  }
+}
